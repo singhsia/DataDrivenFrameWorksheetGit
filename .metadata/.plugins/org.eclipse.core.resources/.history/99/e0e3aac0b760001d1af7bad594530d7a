@@ -1,0 +1,22 @@
+package com.mystore.testcases;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+
+import com.mystore.pageobject.SauceLoginPage;
+
+public class SauceLoginTest extends Baseclass{
+	
+	@Test
+	public void verifyLogin() {
+		driver.get(url);
+		logger.info("opened");
+		
+		SauceLoginPage lp=new SauceLoginPage(driver);
+		lp.enterUsername("standard_user");
+		lp.enterPassword("secret_sauce");
+		lp.clickOnLoginBtn();
+	}
+	
+
+}

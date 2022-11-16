@@ -1,0 +1,55 @@
+package com.mystore.testcases;
+
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.util.Assert;
+import com.mystore.pageobject.AccountCreationDetails;
+import com.mystore.pageobject.Indexpage;
+import com.mystore.pageobject.MyAccount;
+import com.mystore.pageobject.RegisteredUserAccount;
+
+public class TC_AccountPageTest extends Baseclass {
+	@Test
+	public void veriftRegistrationandLogin() throws InterruptedException {
+		
+		driver.get(url);
+		logger.info("url opened");
+		
+		Indexpage ip = new Indexpage(driver);
+		ip.clickOnsignInBtn();
+		logger.info("Clicked on Sign In button successfully.");	
+		MyAccount myAcc = new MyAccount(driver);
+		myAcc.enterEmailAddress("sonam111@gmail.com");
+		logger.info("Email address entered successfully.");
+		myAcc.clickOnSubmitCreatebtn();
+		logger.info("Clicked on Create Button successfully.");
+		Thread.sleep(5000);
+		
+		AccountCreationDetails acd=new AccountCreationDetails(driver);
+		acd.selecttitle();
+		acd.enterfirstname("Sonal");
+		acd.enterlastname("singh");
+		acd.enterpassword("S12345");
+		acd.enterAddFname("sonal");
+		acd.enterAddLname("singh");
+		acd.enterCityNamecity("Washington");
+		acd.enterAddress("54 ICL ,359 c block ");
+		acd.enterZip("10001");
+		acd.enterphonenumber("8800177450");
+		acd.enterAliasName("Home");
+		acd.selectcounty("UnitedStates");
+		logger.info("all details are correct for registration process. ");
+	
+		acd.clickOnRegistrationbtn();
+		logger.info("done successfully");
+		logger.info("Entered all required details for registration process.");
+		acd.clickOnRegistrationbtn();
+		logger.info("Clicked on Registration Button successfully.");
+		
+	
+		
+		
+		
+	}
+
+}

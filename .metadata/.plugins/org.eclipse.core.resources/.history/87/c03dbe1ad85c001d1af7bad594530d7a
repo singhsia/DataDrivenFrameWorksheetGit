@@ -1,0 +1,46 @@
+package com.mystore.testcases;
+
+import org.testng.annotations.Test;
+
+import com.mystore.pageobject.AccountCreationDetails;
+import com.mystore.pageobject.Indexpage;
+import com.mystore.pageobject.MyAccount;
+
+public class TC_AccountPageTest extends Baseclass {
+	@Test
+	public void veriftRegistrationandLogin() throws InterruptedException {
+		
+		driver.get(url);
+		logger.info("url opened");
+		
+		Indexpage ip = new Indexpage(driver);
+		ip.clickOnsignInBtn();
+		logger.info("Clicked on Sign In button successfully.");	
+		MyAccount myAcc = new MyAccount(driver);
+		myAcc.enterEmailAddress("sonam111@gmail.com");
+		logger.info("Email address entered successfully.");
+		myAcc.clickOnSubmitCreatebtn();
+		logger.info("Clicked on Create Button successfully.");
+		Thread.sleep(5000);
+		
+		AccountCreationDetails acd=new AccountCreationDetails(driver);
+		acd.selecttitle();
+		acd.enterfirstname("sonam");
+		acd.enterlastname("singh");
+		acd.enterpassword("S12345");
+		acd.enterAddFname("sonam");
+		acd.enterAddLname("singh");
+		acd.enterCityNamecity("UnitedStates");
+		acd.enterAddress("18/8 worli road");
+		acd.enterZip("10001");
+		acd.enterphonenumber("8800177450");
+		acd.enterAliasName("home");
+		logger.info("all details are correct for registration process. ");
+		acd.clickOnRegistrationbtn();
+		logger.info("done successfully");
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,26 @@
+package com.mystore.testcases;
+
+import org.testng.annotations.Test;
+
+import com.mystore.pageobject.Indexpage;
+import com.mystore.pageobject.MyAccount;
+
+public class TC_MyAccountPageTest extends Baseclass{
+	@Test
+	public void verifyRegistrationandLogin() throws Exception {
+		driver.get(url);
+		logger.info("url opened");
+		Indexpage ip = new Indexpage(driver);
+		ip.clickOnsignInBtn();
+		logger.info("Clicked on Sign In button successfully.");	
+		
+		MyAccount myAcc = new MyAccount(driver);
+		myAcc.enterEmailAddress("selenium64511@test.com");
+		logger.info("Email address entered successfully.");
+		myAcc.clickOnSubmitCreatebtn();
+		logger.info("Clicked on Create Button successfully.");
+		Thread.sleep(5000);
+		
+	}
+
+}

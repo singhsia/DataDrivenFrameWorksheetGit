@@ -1,0 +1,49 @@
+package Browserparameter;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class Multiplebrowserparameter {
+	
+	
+	WebDriver driver;
+	@BeforeTest
+	@Parameters ("browser")
+	public void browserSetUp(String browser) throws Exception {
+		
+		if(browser.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver","//Users//mayank//Downloads//browser//chromedriver");
+			WebDriver driver =new ChromeDriver();
+			driver.get("https://www.google.co.in/");
+			
+	}
+	else if(browser.equalsIgnoreCase("firefox")) {
+		System.setProperty("webdriver.gecko.driver","//Users//mayank//Downloads//browser//geckodriver");
+		WebDriver driver =new FirefoxDriver();
+		driver.get("https://www.facebook.com/");
+	
+	}
+	//else if(browser.equalsIgnoreCase("Edge")) {
+System.setProperty("webdriver.edge.driver","//Users//mayank//Downloads//browser//edgedriver_mac64//msedgedriver");
+		
+		WebDriver driver =new EdgeDriver();
+		driver.get("https://www.facebook.com");
+		
+	}
+		
+	else {
+		throw new Exception("Browser is not supported.");
+	}
+}
+	@Test
+	public void browserTest1() {
+		driver.get("https://www.google.co.in/");
+		driver.manage().window().maximize();
+		driver.close();
+	}
+}

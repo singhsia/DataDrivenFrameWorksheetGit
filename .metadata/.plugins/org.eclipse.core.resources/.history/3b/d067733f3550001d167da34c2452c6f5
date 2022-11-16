@@ -1,0 +1,9 @@
+
+public class TestNGfirst {
+	
+	@Test
+	public void test() {
+		
+	}
+
+}

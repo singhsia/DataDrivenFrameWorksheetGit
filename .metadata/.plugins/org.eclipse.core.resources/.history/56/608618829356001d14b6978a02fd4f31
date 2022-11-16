@@ -1,0 +1,30 @@
+package Excelclass;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadExcelsheet {
+
+	public static void main(String[] args) {
+	
+getRowCount();
+	}
+
+public static void getRowCount(){	
+
+	try{
+		String path="/Users/mayank/Library/Containers/com.microsoft.Excel/Data/Downloads/TestData.xlsx";
+		
+		XSSFWorkbook wb = new XSSFWorkbook(path);
+		XSSFSheet sheet= wb.getSheetAt(0);
+		int rowCount = sheet.getPhysicalNumberOfRows();
+		System.out.println("Number of Row count is :"+rowCount);
+	   
+	}catch(Exception e){
+		e.printStackTrace();
+	}	
+}
+}
+
+   
+	

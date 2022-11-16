@@ -1,0 +1,33 @@
+package com.mystore.testcases;
+
+import org.testng.annotations.Test;
+
+import com.mystore.pageobject.Indexpage;
+import com.mystore.pageobject.MyAccount;
+
+public class TC_MyAccountLoginPassPage extends Baseclass {
+	@Test
+	public void verifyRegistrationandLogin() throws InterruptedException{
+		
+		driver.get(url);
+		logger.info("Url opened");
+		
+		Indexpage ip = new Indexpage(driver);
+		ip.clickOnsignInBtn();
+		logger.info("Clicked on Sign In button successfully.");	
+		
+		MyAccount myAcc = new MyAccount(driver);
+		myAcc.enterEmailAddress("sonam123@gmail.com");
+		logger.info("Email address entered successfully.");
+		myAcc.clickOnSubmitCreatebtn();
+		logger.info("Clicked on Create Button successfully.");
+		Thread.sleep(5000);
+		
+		myAcc.enterEmaillLogin("mnkrathor08@gmail.com");
+		logger.info("successfully done");
+		
+		myAcc.clickOnLoginBtn("Mayank@12345");
+		logger.info("successfully done.");
+	}
+
+}

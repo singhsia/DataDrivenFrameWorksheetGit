@@ -1,0 +1,24 @@
+package com.mystore.testcases;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+
+import com.mystore.pageobject.Indexpage;
+
+public class TC_AccountPageTest extends Baseclass {
+	@Test
+	public void veriftRegistrationandLogin() {
+		
+		driver.get(url);
+		logger.info("url opened");
+		
+		Indexpage ip = new Indexpage(driver);
+		ip.clickOnsignInBtn();
+		logger.info("Clicked on Sign In button successfully.");	
+		
+		
+		
+		
+	}
+
+}

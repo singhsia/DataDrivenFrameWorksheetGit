@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;DataDrivenFrameWorksheet&apos;&#x0A;- Original project: &apos;DataDrivenFrameWorksheet&apos;&#x0A;- Original elements:&#x0A;     DataDrivenFrameWorksheet2022.34.14.10.34.49.html&#x0A;     DataDrivenFrameWorksheet2022.37.14.10.37.36.html" description="Delete elements" element1="reports/DataDrivenFrameWorksheet2022.34.14.10.34.49.html" element2="reports/DataDrivenFrameWorksheet2022.37.14.10.37.36.html" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="2" stamp="1668403022553" subPackages="false" version="1.0"/>
+</session>
